@@ -2,6 +2,7 @@
 URLify: write a method to replace all spaces in a  string with ‘%20’. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given a ‘true’ length of a string. 
 */
 
+//O(N) time O(N) space
 const URLify = function(str){
   let result = '';
   //remove trailing spaces
