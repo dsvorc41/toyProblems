@@ -25,7 +25,7 @@ const setZeros = function(matrix){
   //Nullify columns
   for (let j = 0; j < columns.length; j ++){
     if (columns[j]) nullifyColumn(matrix, j);
-  }
+  } 
 
 
   function nullifyRow(matrix, row) {
