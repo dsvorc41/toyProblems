@@ -15,7 +15,7 @@ const setZeros = function(matrix){
         columns[j] = true;
       }
   	}
-  }
+  } 
 
   //Nullify rows
   for (let i = 0; i < rows.length; i ++){
