@@ -32,7 +32,7 @@ const setZeros = function(matrix){
     for (let i = 0; i < matrix[0].length; i ++){
       matrix[row][i] = 0;
     }
-  }
+  } 
 
   function nullifyColumn(matrix, col) {
     for (let i = 0; i < matrix.length; i ++){
