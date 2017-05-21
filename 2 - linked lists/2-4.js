@@ -7,3 +7,44 @@ EXAMPLE
 Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 (x = 5)
 Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 */
+
+const linkedListPartition = function(node, x){
+  let head = node;
+  let tail = node;
+
+  while (node){
+    let next = node.next;
+    if (node.value < x){
+      node.next = head;
+      head = node;
+    } else {
+      tail.next = node;
+      tail = node;
+    }
+    node = next;
+  }
+  tail.next = null
+  return JSON.stringify(head);
+}
+
+const linkedList = {
+  value: 3,
+  next: {
+    value: 5, 
+    next: {
+      value: 8,
+      next:{
+        value: 5, 
+        next: {
+          value: 10,
+          next: {
+            value: 2,
+            next: null
+          }
+        }
+      }
+    }
+  }
+};
+
+console.log(linkedListPartition(linkedList, 5))

@@ -1,29 +1,22 @@
-//1.7
+//Hacker Rank minimum loss problem
 
-const rotateMatrix90degrees = function(matrix){
-  let numberOfRows = matrix.length; 
-  for (let i = 0; i < numberOfRows / 2; i ++){
-    let first = i;
-    let last = numberOfRowslet offset = i - first;
-    for (let j = first; j < last; j ++){
-      let offset = i - first;
-      //save top
-      let top = matrix[first][j];
+const minimumLoss = function(arrOfPrices){
+  let minLoss = Infinity;
+
+  for (let i = 0; i < arrOfPrices.length; i ++){
+    let currentPrice = arrOfPrices[i];
+    for (let j = i + 1; j < arrOfPrices.length; j ++){
+      let futurePrice = arrOfPrices[j];
+      let tempLoss = currentPrice - futurePrice;
+      if (tempLoss > 0){
+        minLoss = Math.min(minLoss, tempLoss);
+      }
     }
   }
+
+  return minLoss;
 }
 
-let matrix = [
-  [1,  2,  3, 4], 
-  [5,  6,  7, 8], 
-  [9, 10, 11, 12], 
-  [13, 14, 15, 16]
-];  
+let housePrices = [20, 7, 8, 2, 5];
 
-console.log(rotateMatrix90degrees(matrix))
-// let output = [ 
-//   [ 13, 9, 5, 1 ],
-//   [ 14, 10, 6, 2 ],
-//   [ 15, 11, 7, 3 ],
-//   [ 16, 12, 8, 4 ] 
-// ];
+console.log(minimumLoss(housePrices))
