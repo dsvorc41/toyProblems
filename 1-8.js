@@ -4,8 +4,8 @@ Write an algorithm such that if an element in an MxN matrix is 0, its entire row
 */
 
 const setZeros = function(matrix){
-  let rows = new Array(matrix[0].length)
-  let columns = new Array(matrix[1].length)
+  let rows = [];
+  let columns = [];
 
   //store the row and column index with value 0;
   for (let i = 0; i < matrix.length; i ++){

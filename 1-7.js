@@ -3,6 +3,7 @@ Rotate Matrix: Given an image represented by NxN matrix, where each pixel in the
 */
 
 const rotateMatrix90degrees = function(matrix){
+  debugger;
   let n = matrix.length;
   for (let layer = 0; layer < n / 2; layer ++){
     let first = layer;
@@ -11,16 +12,16 @@ const rotateMatrix90degrees = function(matrix){
       let offset = i - first;
       let top = matrix[first][i]//save top
 
-      //left -> top
+      //bottom left ^ top left
       matrix[first][i] = matrix[last-offset][first];
 
-      //bottom -> left
+      //bottom right < bottom eft
       matrix[last-offset][first] = matrix[last][last - offset];
 
-      //rigth -> bottom
+      //top right v bottom right
       matrix[last][last - offset] = matrix[i][last];
 
-      //top -> right
+      //top left > top right
       matrix[i][last] = top; //right <- saved top
     }
   }
@@ -35,7 +36,7 @@ let matrix = [
   [13, 14, 15, 16]
 ];  
 
-console.log(rotateMatrix(matrix))
+console.log(rotateMatrix90degrees(matrix))
 // let output = [ 
 //   [ 13, 9, 5, 1 ],
 //   [ 14, 10, 6, 2 ],
