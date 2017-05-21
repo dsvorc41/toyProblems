@@ -16,7 +16,7 @@ const detectLoop = function(linkedList){
   let slowPointer = headNode;
   let fastPointer = headNode;
   let collisionPoint = null
-
+  //move two pointers at different speeds to find the loop, and when they collide save the collision point
   while (fastPointer){
     slowPointer = slowPointer.next;
     fastPointer = fastPointer.next.next;
@@ -25,7 +25,7 @@ const detectLoop = function(linkedList){
       break;
     }
   }
-
+  //start from the headNode and move it with collisonPoint at same speed until they collide again. That's the start of the loop. 
   while (headNode){
     headNode = headNode.next;
     collisionPoint = collisionPoint.next;
@@ -33,9 +33,11 @@ const detectLoop = function(linkedList){
       return headNode.value;
     }
   }
+
   return null;
 }
 
+//TEST
 //create individual nodes of a linked list
 const nodeA = {
   value: 'A', 
@@ -64,4 +66,5 @@ nodeC.next = nodeD;
 nodeD.next = nodeE;
 nodeE.next = nodeC;
 const linkedList = nodeA;
-console.log(detectLoop(linkedList));
+
+console.log(detectLoop(linkedList));//C
