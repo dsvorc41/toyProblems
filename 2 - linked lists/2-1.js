@@ -1,5 +1,9 @@
-//2.1
+/*
+2.1 Remove Duplicates:
+Write code to remove duplicates from an unsorted linked list
 
+Follow up: Do it without any extra data structures (solution: two nested while loops to find duplicates)
+*/
 const deleteLinkedListDuplicates = function(node){
   let filterObject = {};
   let previousNode = null;
