@@ -36,11 +36,18 @@ let testStack = new Stack();
 testStack.push(9);
 testStack.push(8);
 testStack.push(10);
-console.log(testStack.pop());
-console.log(testStack.pop());
-console.log(testStack.pop());
-console.log(testStack.pop());
+console.log(testStack.pop() === 10);
+console.log(testStack.pop() === 8);
+console.log(testStack.pop() === 9);
+console.log(testStack.pop() === undefined);
 testStack.push(3);
 testStack.push(2);
 testStack.push(11);
-console.log(testStack);
+console.log(testStack.min() === 2);
+console.log(testStack.pop() === 11);
+console.log(testStack.pop() === 2);
+console.log(testStack.min() === 3);
+console.log(testStack.pop() === 3);
+console.log(testStack.pop() === undefined);
+
+
