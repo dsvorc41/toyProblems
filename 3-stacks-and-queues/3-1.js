@@ -36,7 +36,7 @@ Stack.prototype.size = function(stackNum){
 Stack.prototype.isFull = function(stackNum){
   console.log(this.lastOccupiedStackIndices[stackNum] < this.singleStackSize -1)
   return this.lastOccupiedStackIndices[stackNum] < this.singleStackSize -1;
-} 
+}  
 
 let testStack = new Stack(3);
 // testStack.push(3, 1)
