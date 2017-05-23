@@ -24,29 +24,26 @@ SetOfStacks.prototype.push = function(value) {
 }
 
 SetOfStacks.prototype.pop = function() {
-  
+  if (this.size){
+    let last = this.storage[this.currentStack].pop();
+    this.size --;
+    return last;
+  }
 }
 
-SetOfStacks.prototype.size = function() {
-  
+SetOfStacks.prototype.length = function() {
+  return this.size;
 }
 
 let testStack = new SetOfStacks(3);
-testStack.push(9);
+testStack.push(1);
+testStack.push(2);
+testStack.push(3);
+testStack.push(4);
+testStack.push(5);
+testStack.push(6);
+testStack.push(7);
 testStack.push(8);
-testStack.push(10);
-testStack.push(9);
 
-console.log(testStack);
-// console.log(testStack.pop() === 8);
-// console.log(testStack.pop() === 9);
-// console.log(testStack.pop() === undefined);
-// testStack.push(3);
-// testStack.push(2);
-// testStack.push(11);
-// console.log(testStack.min() === 2);
-// console.log(testStack.pop() === 11);
-// console.log(testStack.pop() === 2);
-// console.log(testStack.min() === 3);
-// console.log(testStack.pop() === 3);
-// console.log(testStack.pop() === undefined);
+console.log(testStack.pop() === 8);
+console.log(testStack.length() === 7);
